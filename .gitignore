@@ -1,0 +1,9 @@
+# ignore all .class files
+*.class
+
+# vscode 생성 파일
+.vscode/
+bin/
+lib/
+
+
