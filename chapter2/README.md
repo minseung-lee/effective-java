@@ -1,18 +1,24 @@
-## Getting Started
+# Chapter 2. 
+## part1 . 생성자 대신 정적 팩터리 메서드를 고려해보자
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+### 장점
+- 팩토리 메서드에는 이름이 있다.
+- 호출할때마다 새로운 객체를 생성할 필요가 없다.
+- 반환값 자료형의 하위 자료형 객체를 반환할 수 있다.
+- 형인자 자료형 (parameterized type) 객체를 만들기 편함.
 
-## Folder Structure
+### 단점
+- 하위 클래스 만들기 어렵다. (public이나 protected로 선언된 생성자가 없음)
+- 정적 팩토리 메서드가 다른 정적 메서드와 구분되지 않음.
 
-The workspace contains two folders by default, where:
+## part2. 셍성자에 매개변수가 많다면 빌더를 고려하라.
+### 결론 : 점층적 생성자 패턴과 자바빈즈 패턴의 장점이 빌더 패턴이다!!!!!
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+- 점층적 생성자 패턴은 변수의 확장하기 어렵다.
+- 자바빈즈 패턴은 객체 하나를 만드려면 여러 메소드를 호출해야하고, 불변 클래스에 대한 예외처리를 직접해야함.
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+## part3. 생성자나 열거타입으로 싱글턴암을 보증하라.
 
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+- 주로, 정적 팩터리 방식의 싱글턴 패턴 구현했던걸로 기억됨.
+- 예제 작성 (Lotto.java)
